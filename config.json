@@ -1,0 +1,22 @@
+{
+    "services":{
+        "say_hello": {
+            "container": "jd_examples/say_hello",
+            "port": 7720,
+            "depends": ["say_comma"]
+        },
+        "say_comma": {
+            "container": "jd_examples/say_comma",
+            "port": 7701
+        },
+        "say_world": {
+            "container": "jd_examples/say_world",
+            "port": 7705
+        },
+        "summator": {
+            "container": "jd_examples/summator",
+            "port": 8080,
+            "depends": ["say_hello", "say_world"]
+        }
+    }
+}
